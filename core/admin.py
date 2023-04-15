@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import *
 
+admin.site.site_title = 'Pharmacy ERP'
+admin.site.site_header = 'Pharmacy ERP Admin Portal'
+
 class BaseAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         if not change:

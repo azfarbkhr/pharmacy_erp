@@ -35,6 +35,7 @@ class organization(BaseModel):
 
     class Meta:
         verbose_name_plural = 'Organizations'
+        verbose_name = 'Organization'
 
     
 class organization_user(BaseModel):
@@ -47,6 +48,7 @@ class organization_user(BaseModel):
 
     class Meta:
         verbose_name_plural = 'Organization & User Relations'
+        verbose_name = 'User/Org Relationship'
 
 
 class product(BaseModel):
@@ -65,6 +67,7 @@ class product(BaseModel):
 
     class Meta:
         verbose_name_plural = 'Products'
+        verbose_name = 'Product/Inventory'
 
 class product_unit_of_measure(BaseModel):
     name = models.CharField(max_length=100)
@@ -75,6 +78,7 @@ class product_unit_of_measure(BaseModel):
     
     class Meta:
         verbose_name_plural = 'Product Unit of Measure'
+        verbose_name = 'Unit of Measure'
 
 class product_price_history(BaseModel):
     product = models.ForeignKey(product, on_delete=models.CASCADE)
@@ -87,6 +91,7 @@ class product_price_history(BaseModel):
     
     class Meta:
         verbose_name_plural = 'Price History'
+        verbose_name = 'Price History'
 
 class party(BaseModel):
     PARTY_TYPES = (
@@ -106,6 +111,7 @@ class party(BaseModel):
 
     class Meta:
         verbose_name_plural = 'Parties'
+        verbose_name = 'Party'
   
 class invoice_header(BaseModel):
     INVOICE_TYPES = (
@@ -127,6 +133,7 @@ class invoice_header(BaseModel):
     
     class Meta:
         verbose_name_plural = 'Invoices'
+        verbose_name = 'Invoice'
     
 class invoice_detail(BaseModel):
     invoice = models.ForeignKey(invoice_header, on_delete=models.CASCADE)
@@ -141,6 +148,7 @@ class invoice_detail(BaseModel):
     
     class Meta:
         verbose_name_plural = 'Invoice Details'
+        verbose_name = 'Invoice Detail'
 
 class invoice_payment(BaseModel):
     PAYMENT_TYPES = (
@@ -159,5 +167,6 @@ class invoice_payment(BaseModel):
 
     class Meta:
         verbose_name_plural = 'Payments'
+        verbose_name = 'Payment'
 
 
